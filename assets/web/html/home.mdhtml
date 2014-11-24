@@ -1,0 +1,35 @@
+<style type="text/css">
+#why
+{
+	position: relative;
+	background-color: #404040;
+}
+
+#reasons
+{
+	position: relative;
+	float: left;
+	margin-right: 8px;
+}
+
+#reasons div
+{
+	background-color: #404040;
+	border: 4px solid #C6C6C6;
+}
+#reasons div:hover
+{
+	border: 4px solid red;
+}
+</style>
+<h1 class="center">Home</h1>
+<div style="padding-left: 16px; padding-right: 16px;">
+	<h2 class="center">UberScout | The Ultimate Companion to FRC Scouting!</h2>
+	<div id="why">
+		<div id="reasons">
+			<div>Why UberScout?</div>
+			<div>Features?</div>
+		</div>
+		<div id="target">Please hover over a reason to see why!</div>
+	</div>
+</div>

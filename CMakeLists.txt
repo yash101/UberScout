@@ -1,5 +1,10 @@
 project(UberScout)
 cmake_minimum_required(VERSION 2.8)
-aux_source_directory(. SRC_LIST)
-add_executable(${PROJECT_NAME} ${SRC_LIST})
-
+aux_source_directory(. ROOT)
+aux_source_directory(./source SOURCE)
+find_package(Threads REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pthread -std=c++11")
+add_definitions(-DDLIB_NO_GUI_SUPPORT)
+file(GLOB_RECURSE HEADER "include/*hxx")
+add_executable(${PROJECT_NAME} lib/dlib/all/source.cpp ${SOURCE} ${ROOT} ${HEADER})
+target_link_libraries(${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})

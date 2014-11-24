@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UberScout | The ultimate scouting companion!</title>
+		<link rel="stylesheet" type="text/css" href="/file/css?loc=assets/web/css/main.css" />
+		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/AJAX.js"></script>
+		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/body_control.js"></script>
+		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/navigator.js"></script>
+		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/main.js"></script>
+	</head>
+	<body>
+		<div id="topnav">
+			<div id-"title">UberScout</div>
+			<div id="nav-home">Home</div>
+			<div id="nav-help">Help</div>
+		</div>
+		<div id="content">
+		</div>
+		<div id="assets" preload>
+			<audio id="audio_click">
+				<source src="/file/mpeg?loc=assets/web/audio/mpeg/click.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+	</body>
+</html>
