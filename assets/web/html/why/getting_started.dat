@@ -1,0 +1,15 @@
+<h1>Getting Started!</h1>
+<p>Getting started is quite simple! To begin, please clone the <a href="https://github.com/yash101/UberScout" target="_blank">GitHub repository!</a></p>
+<p>To clone the repository, either click the download as zip button on the web interface, or run the following command:</p>
+<pre>$~ git clone https://github.com/yash101/UberScout.git</pre>
+<p>Once you have the code, you may continue on!</p>
+<hr />
+<h2>Linux/UNIX/BSD/etc.</h2>
+<ol>
+	<li>Open the terminal or the command processor on your computer.</li>
+	<li>Navigate to the source directory, e.g. UberScout.</li>
+	<li>Create a build folder, e.g. build: <pre>$~ mkdir build</pre>and enter it, e.g. <pre>$~ cd build</pre></li>
+	<li>Run CMake to generate the makefiles, e.g. <pre>$~ cmake ..</pre></li>
+	<li>Run make to compile the software!</li>
+	<li><pre>./UberScout</pre> to start the server!</li>
+</ol>

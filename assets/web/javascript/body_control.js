@@ -1,3 +1,4 @@
+var bodyAt = null;
 function body_center()
 {
 	document.getElementById("content").style.left = "10%";
@@ -18,5 +19,6 @@ function changeBody(x)
 	AJAX_GET(x, function(y)
 	{
 		document.getElementById("content").innerHTML = y;
+		bodyAt = x;
 	});
 }

@@ -6,13 +6,15 @@
 		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/AJAX.js"></script>
 		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/body_control.js"></script>
 		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/navigator.js"></script>
+		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/team_listing.js"></script>
 		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/main.js"></script>
 	</head>
 	<body>
 		<div id="topnav">
-			<div id-"title">UberScout</div>
+			<img id="topnav_img" src="/file/png?loc=assets/web/png/UberScout.png"></img>
 			<div id="nav-home">Home</div>
 			<div id="nav-help">Help</div>
+			<div id="team-list">Team List</div>
 		</div>
 		<div id="content">
 		</div>

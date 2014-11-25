@@ -1,0 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/file/css?loc=assets/web/css/team_listing.css" />
+<h1>Team Listing</h1>
+<table class="block" id="main_tbl_team_list">
+</table>

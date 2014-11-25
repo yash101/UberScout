@@ -15,6 +15,17 @@ const std::string s::web_server::on_request(const dlib::incoming_things& incomin
         outgoing.headers["Content-type"] = "text/html";
         return dev::fs::read_file("assets/web/html/index.zhtml");
     }
+
+    if(incoming.path == "/team_list?type=numbers")
+    {
+        return team_list();
+    }
+
+    if(incoming.path == "/team_list?type=names")
+    {
+        return team_names();
+    }
+
     if(incoming.path.substr(0, 5) == "/file")
     {
         return process_f_req(incoming.path, outgoing);

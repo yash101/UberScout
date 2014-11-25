@@ -1,0 +1,40 @@
+.TeamNumber
+{
+	width: 200px;
+}
+
+.TeamName
+{
+
+}
+
+#main_tbl_team_list
+{
+	width: 100%;
+	min-height: 16px;
+}
+
+#main_tbl_team_list th
+{
+	background-color: #C6C6C6;
+	color: #404040;
+	border: 4px solid red;
+}
+
+#main_tbl_team_list td
+{
+	color: inherit;
+	border: 4px solid #98BF21;
+}
+
+.TeamListingHighlighterRow:hover 
+{
+	background-color: #404040;
+	color: #C6C6C6;
+}
+
+.TeamListingHighlighterRow
+{
+	background-color: #C6C6C6;
+	color: #404040;
+}

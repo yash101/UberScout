@@ -4,6 +4,12 @@
 #include <thread>
 #include <sstream>
 #include <iostream>
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <sys/stat.h>
+#include <dirent.h>
+#endif
 
 bool dev::fs::write_file(std::string file_location, std::string data)
 {
@@ -42,4 +48,13 @@ std::string dev::fs::read_file(std::string file_location)
     {
         return "File could not be opened!";
     }
+}
+
+void dev::fs::makedir(std::string name)
+{
+#ifdef _WIN32
+    CreateDirectory(name.c_str(), NULL);
+#else
+    mkdir(name.c_str(), 0755);
+#endif
 }

@@ -1,35 +1,57 @@
 <style type="text/css">
-#why
+#why_tbl
 {
-	position: relative;
-	background-color: #404040;
+	width: 100%;
 }
 
-#reasons
+#why_tbl_pane
 {
-	position: relative;
-	float: left;
-	margin-right: 8px;
+	width: 150px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
-#reasons div
+#why_tbl_pane div
 {
 	background-color: #404040;
-	border: 4px solid #C6C6C6;
+	border: 4px solid #98BF21;
+	color: #C6C6C6;
+	height: 24px;
+	text-align: center;
 }
-#reasons div:hover
+
+#why_tbl_pane div:hover
 {
+	background-color: #C6C6C6;
 	border: 4px solid red;
+	color: #404040;
+}
+
+#target
+{
+	min-height: 100px;
+	width: 100%;
+}
+
+#target_h
+{
+	width: 100%;
 }
 </style>
 <h1 class="center">Home</h1>
 <div style="padding-left: 16px; padding-right: 16px;">
 	<h2 class="center">UberScout | The Ultimate Companion to FRC Scouting!</h2>
-	<div id="why">
-		<div id="reasons">
-			<div>Why UberScout?</div>
-			<div>Features?</div>
-		</div>
-		<div id="target">Please hover over a reason to see why!</div>
-	</div>
+	<table id="why_tbl">
+		<tr>
+			<td id="why_tbl_pane">
+				<div onmouseover="javascript:changeReason('why');">Why UberScout?</div>
+				<div onmouseover="javascript:changeReason('features');">Features?</div>
+				<div onmouseover="javascript:changeReason('getting_started');">Getting Started</div>
+			</td>
+			<td id="target_h">
+				<div id="target" class="block">Please hover over a reason to the left to read more!</div>
+			</td>
+		</tr>
+	</table>
 </div>
