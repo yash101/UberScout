@@ -22,16 +22,21 @@ namespace misc
 {
     std::string getTime()
     {
-        auto now = std::chrono::system_clock::now();
-        time_t now_c = std::chrono::system_clock::to_time_t(now);
         std::stringstream str;
-#ifndef __GCC__
-        str << std::put_time(std::localtime(&now_c), "%c");
-#else
-        str << "put_time() not supported with GCC";
-#pragma warning("put_time() not supported!");
-#endif
-        return str.str();
+        std::time_t rawtime;
+        struct tm *timeinfo;
+        time(&rawtime);
+        timeinfo = localtime(&rawtime);
+        str << asctime(timeinfo);
+
+        if(str.str().size() != 0)
+        {
+            return str.str().substr(0, str.str().size() - 1);
+        }
+        else
+        {
+            return str.str();
+        }
     }
 }
 
