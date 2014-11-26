@@ -25,7 +25,12 @@ namespace misc
         auto now = std::chrono::system_clock::now();
         time_t now_c = std::chrono::system_clock::to_time_t(now);
         std::stringstream str;
+#ifndef _GNUC_
         str << std::put_time(std::localtime(&now_c), "%c");
+#else
+        str << "put_time() not supported with GCC";
+#pragma warning("put_time() not supported!");
+#endif
         return str.str();
     }
 }
