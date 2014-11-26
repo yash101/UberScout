@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir build
+mv assets build/.
+cd build
+cmake ..
+make
+./UberScout
