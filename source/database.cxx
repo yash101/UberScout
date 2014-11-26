@@ -10,6 +10,18 @@
 
 #define DB_PREFIX std::string("assets/database/")
 
+template<typename z> int locate(std::vector<z> x, z find)
+{
+    for(unsigned int i = 0; i < x.size(); i++)
+    {
+        if(x[i] == find)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
 template<typename z> std::string toString(z x)
 {
     std::stringstream str;
@@ -32,7 +44,7 @@ std::vector<d::ushort> d::getTeamNumbers()
 std::string d::getTeamName(d::ushort team_number)
 {
     std::vector<d::ushort> teams = d::getTeamNumbers();
-    if(std::find(teams.begin(), teams.end(), team_number) != teams.end())
+    if(locate(teams, team_number) != -1)
     {
         return dev::fs::read_file(DB_PREFIX + toString(team_number) + "/name.dat");
     }
@@ -76,8 +88,7 @@ void d::registerTeam(d::ushort team_number, std::string team_name)
     //Update the team DB!
     h::log("Adding team " + team_name + " to the team list!");
     std::vector<d::ushort> teams = d::getTeamNumbers();
-    //Check to make sure team does not exist yet!
-    if(std::find(teams.begin(), teams.end(), team_number) == teams.end())
+    if(locate(teams, team_number) == -1)
     {
         std::ofstream fout(DB_PREFIX + "team_list.dat", std::ios::app);
         if(fout.is_open())
