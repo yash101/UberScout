@@ -12,3 +12,9 @@ function changeReason(x)
 		document.getElementById("target").innerHTML = y;
 	});
 }
+
+var ImageLoaderBoot = setInterval(function()
+{
+	document.getElementById("topnav_img").src = "/file/png?loc=assets/web/png/UberScout.png";
+	clearInterval(ImageLoaderBoot);
+}, 1000);

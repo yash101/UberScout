@@ -21,7 +21,7 @@
 			</audio>
 		</div>
 		<div id="topnav">
-			<img id="topnav_img" src="/file/png?loc=assets/web/png/UberScout.png"></img>
+			<img id="topnav_img"></img>
 			<div id="nav-home">Home</div>
 			<div id="apps-link">Apps</div>
 		</div>
