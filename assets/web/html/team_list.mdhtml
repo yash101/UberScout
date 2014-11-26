@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/file/css?loc=assets/web/css/team_listing.css" />
 <h1>Team Listing</h1>
+<button id="refresh_btn_team_list" onclick="javascript:getTeamListing();">Click here to load/refresh the team list!</button>
 <table class="block" id="main_tbl_team_list">
 </table>

@@ -15,6 +15,38 @@ inline bool operator==(std::string a, std::string b)
     return !strcmp(a.c_str(), b.c_str());
 }
 
+std::string add_team(const dlib::incoming_things& incoming)
+{
+    d::ushort team_number = (d::ushort) std::atoi(incoming.queries["team_number"].c_str());
+    if(team_number == 0)
+    {
+        return "The team number is invalid!";
+    }
+    else
+    {
+        std::string team_name = incoming.queries["team_name"];
+        if(team_name.size() == 0)
+        {
+            return "The team name can't be blank! :(";
+        }
+        else
+        {
+            d::registerTeam(team_number, team_name);
+            return "Team registration successful!";
+        }
+    }
+}
+
+std::string remove_team(const dlib::incoming_things& incoming)
+{
+    if(atoi(incoming.queries["team"].c_str()) < 1)
+    {
+        return "Failure!";
+    }
+    d::rmTeam(std::atoi(incoming.queries["team"].c_str()));
+    return "Success!";
+}
+
 std::string team_list()
 {
     std::vector<d::ushort> teams = d::getTeamNumbers();

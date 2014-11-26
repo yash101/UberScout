@@ -1,0 +1,10 @@
+<link rel="stylesheet" type="text/css" href="/file/css?loc=assets/web/css/apps/team_registrar.css" />
+<h1>Team Registration</h1>
+<p>This form will allow you to add more teams to this large database!</p>
+<p>You will need to provide a team number and team name for the addition of this new team!</p>
+<hr />
+<form action="javascript:submitTeamRegistrar();" id="team_registrar_form">
+	<input type="size" id="team_registrar_number" placeholder="Team Number" required />
+	<input type="text" id="team_registrar_name" placeholder="Team Name" required />
+	<input type="submit" value="Add New Team!" />
+</form>

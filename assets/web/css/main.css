@@ -58,13 +58,14 @@ body
 
 #content
 {
-	background-color: #404040;
+	background-color: #181717;
 	position: fixed;
 	top: 60px;
 	left: 10%;
 	right: 10%;
 	bottom: 10px;
 	overflow-y: auto;
+	padding: 16px;
 }
 
 .center
@@ -80,4 +81,107 @@ body
 #assets
 {
 	display: none;
+}
+
+#mesbox
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	padding: 32px;
+	-webkit-transition: all .5s ease-in-out;
+	-webkit-transform: translate(-150%, 150%);
+	-moz-transition: all .5s ease-in-out;
+	-moz-transform: translate(-150%, 150%);
+	-ms-transition: all .5s ease-in-out;
+	-ms-transform: translate(-150%, 150%);
+	-o-transition: all .5s ease-in-out;
+	-o-transform: translate(-150%, 150%);
+	transition: all .5s ease-in-out;
+	transform: translate(-150%, 150%);
+}
+
+#mesbox #mesbox_back
+{
+	opacity: 0.4;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	padding: 32px;
+	padding-top: 64px;
+}
+
+#mesbox #message
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 60%;
+	height: 60%;
+	background-color: black;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+	text-align: center;
+	border: 4px solid #98BF21;
+	-webkit-transition: all .5s ease-in-out;
+}
+
+#mesbox #close_message_box
+{
+	position: fixed;
+	bottom: 20%;
+	left: 20%;
+	right: 10%;
+	width: 60%;
+	background-color: #404040;
+}
+
+#mesbox #message:hover
+{
+	border: 4px solid red;
+	//-webkit-transform: translate(-50%, -50%) rotate(1.2deg);
+	-moz-transform: translate(-50%, -50%) rotate(1.2deg);
+	-ms-transform: translate(-50%, -50%) rotate(1.2deg);
+	-o-transform: translate(-50%, -50%) rotate(1.2deg);
+	transform: translate(-50%, -50%) rotate(1.2deg);
+}
+
+#mesbox #message a
+{
+	color: #C6C6C6;
+	background-color: black;
+}
+
+#mesbox #message a:hover
+{
+	color: #404040;
+	background-color: #C6C6C6;
+}
+
+#mesbox #caption
+{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: #98BF21;
+	text-align: center;
+	color: #602571;
+}
+
+#mesbox #message_con
+{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	color: white;
+	padding: 16px;
 }

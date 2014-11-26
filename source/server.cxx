@@ -26,6 +26,16 @@ const std::string s::web_server::on_request(const dlib::incoming_things& incomin
         return team_names();
     }
 
+    if(incoming.path == "/team_list?type=add")
+    {
+        return add_team(incoming);
+    }
+
+    if(incoming.path == "/team_list?type=remove")
+    {
+        return remove_team(incoming);
+    }
+
     if(incoming.path.substr(0, 5) == "/file")
     {
         return process_f_req(incoming.path, outgoing);

@@ -1,0 +1,58 @@
+#applications_menu
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 100%;
+	right: 100%;
+
+	opacity: 0.9;
+	background-color: #404040;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+	overflow-y: auto;
+
+	border: 4px solid #98BF21;
+	padding: 16px;
+
+	-webkit-transition: all 1s ease-in-out;
+}
+
+#applications_menu div
+{
+	width: 200px;
+	height: 200px;
+	font-size: 24px;
+	border: 4px solid #98BF21;
+	color: #C6C6C6;
+	background-color: #404040;
+}
+
+#applications_menu div:hover
+{
+	border: 4px solid red;
+	background-color: #C6C6C6;
+	color: #404040;
+}
+
+#applications_menu #close-applications_menu
+{
+	background-color: red;
+	color: white;
+	border: 4px solid #98BF21;
+}
+
+#applications_menu #close-applications_menu:hover
+{
+	border: 4px solid red;
+}

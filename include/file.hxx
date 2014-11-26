@@ -9,6 +9,9 @@ namespace dev
         bool write_file(std::string file_location, std::string data);
         void write_file_async(std::string file_location, std::string data);
         void makedir(std::string name);
+        void deleteFolder(std::string name);
+        void deleteFile(std::string name);
+        void makedirpath(std::string name);
     }
 }
 #endif // FILE_HXX

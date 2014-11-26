@@ -53,6 +53,23 @@ void d::writeTeamNumbers(std::vector<d::ushort> nums)
     return;
 }
 
+void d::rmTeam(d::ushort teamNumber)
+{
+    std::vector<d::ushort> teams = d::getTeamNumbers();
+    std::vector<d::ushort> x;
+    for(unsigned int i = 0; i < teams.size(); i++)
+    {
+        if(teams[i] != teamNumber)
+        {
+            x.push_back(teams[i]);
+        }
+    }
+    if(x.size() != teams.size())
+    {
+        d::writeTeamNumbers(x);
+    }
+}
+
 void d::registerTeam(d::ushort team_number, std::string team_name)
 {
     h::log("Registering new team: " + toString(team_number) + " >> " + team_name);
@@ -75,4 +92,15 @@ void d::registerTeam(d::ushort team_number, std::string team_name)
     //Create the filesystem layout!
     dev::fs::makedir(DB_PREFIX + toString(team_number));
     dev::fs::write_file_async(DB_PREFIX + toString(team_number) + "/name.dat", team_name);
+}
+
+void d::setTeamDescription(d::ushort team_number, std::string description)
+{
+    dev::fs::write_file_async(DB_PREFIX + toString(team_number) + "/description.dat", description);
+    return;
+}
+
+void d::modTeamValue(d::ushort team_number, std::string name, std::string data)
+{
+
 }

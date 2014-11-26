@@ -4,11 +4,15 @@
 #include <thread>
 #include <sstream>
 #include <iostream>
+#include <stdio.h>
+#include <cstring>
+#include <vector>
 #ifdef _WIN32
 #include <windows.h>
 #else
 #include <sys/stat.h>
 #include <dirent.h>
+#include <unistd.h>
 #endif
 
 bool dev::fs::write_file(std::string file_location, std::string data)
@@ -16,8 +20,20 @@ bool dev::fs::write_file(std::string file_location, std::string data)
     std::ofstream fout(file_location.c_str());
     if(fout.is_open())
     {
-        fout << data;
-        fout.close();
+        if(data.size() == 0)
+        {
+            fout.close();
+            std::ofstream x(file_location.c_str(), std::ios::trunc);
+            if(x.is_open())
+            {
+                x.close();
+            }
+        }
+        else
+        {
+            fout << data;
+            fout.close();
+        }
         return true;
     }
     else
@@ -57,4 +73,45 @@ void dev::fs::makedir(std::string name)
 #else
     mkdir(name.c_str(), 0755);
 #endif
+}
+
+void dev::fs::makedirpath(std::string name)
+{
+#ifdef _WIN32
+#define PCONCAT '\\'
+#else
+#define PCONCAT '/'
+#endif
+    std::stringstream str;
+    str << name;
+
+    std::vector<std::string> names;
+    std::string buf;
+    while(std::getline(str, buf, PCONCAT))
+    {
+        names.push_back(buf);
+    }
+    for(unsigned int i = 0; i < names.size(); i++)
+    {
+        std::stringstream x;
+        for(unsigned int j = 0; j < i; j++)
+        {
+            x << names[j] << PCONCAT;
+        }
+        dev::fs::makedir(x.str());
+    }
+}
+
+void dev::fs::deleteFolder(std::string name)
+{
+#ifdef _WIN32
+    RemoveDirectory(name.c_str());
+#else
+    rmdir(name.c_str());
+#endif
+}
+
+void dev::fs::deleteFile(std::string name)
+{
+    remove(name.c_str());
 }
