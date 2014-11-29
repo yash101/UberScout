@@ -29,6 +29,11 @@ template<typename z> std::string toString(z x)
     return str.str();
 }
 
+std::string getLocation(std::string location, d::ushort team)
+{
+    return DB_PREFIX + toString(team) + "/" + location;
+}
+
 std::vector<d::ushort> d::getTeamNumbers()
 {
     std::vector<d::ushort> teams;
@@ -111,7 +116,31 @@ void d::setTeamDescription(d::ushort team_number, std::string description)
     return;
 }
 
-void d::modTeamValue(d::ushort team_number, std::string name, std::string data)
+//Create the directory tree for the data
+//INPUT:
+//PATH=/whatever/something
+//NAME=something
+//DATA=In the new file!
+void d::modTeamValue(d::ushort team_number, std::string path, std::string name, std::string data)
 {
+    //Check to see it the team exists.
+    if(d::getTeamName(team_number).size() != 0)
+    {
+        dev::fs::makedirpath(getLocation(path, team_number));
+        dev::fs::write_file_async(getLocation(path + "/" + name + ".dat", team_number), data);
+    }
+    else
+    {
+        h::log("Unable to add new team! Team does not exist!");
+    }
+}
 
+std::string d::getTeamValue(d::ushort team_number, std::string path, std::string name)
+{
+    std::string x = dev::fs::read_file(getLocation(path + "/" + name + ".dat", team_number));
+    if(!strcmp(x.c_str(), "File could not be opened!"))
+    {
+        x = "Unknown Value!";
+    }
+    return x;
 }

@@ -20,12 +20,21 @@
 	flex-flow: row wrap;
 	justify-content: space-around;
 
+	flex-align: start;
+	flex-align: flex-start;
+	flex-pack: center;
+	flex-pack: flex-center;
+
 	overflow-y: auto;
 
 	border: 4px solid #98BF21;
 	padding: 16px;
 
-	-webkit-transition: all 1s ease-in-out;
+	-webkit-transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	-ms-transition: all .25s ease-in-out;
+	-o-transition: all .25s ease-in-out;
+	transition: all .25s ease-in-out;
 }
 
 #applications_menu div

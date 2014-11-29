@@ -36,6 +36,19 @@ const std::string s::web_server::on_request(const dlib::incoming_things& incomin
         return remove_team(incoming);
     }
 
+    if(incoming.path == "/getvalue")
+    {
+        h::log("Requested data for team " + incoming.queries["team"] + " for " + incoming.queries["path"] + "/" + incoming.queries["name"]);
+        return d::getTeamValue(std::atoi(incoming.queries["team"].c_str()), incoming.queries["path"], incoming.queries["name"]);
+    }
+
+    if(incoming.path == "/setvalue")
+    {
+        d::modTeamValue(std::atoi(incoming.queries["team"].c_str()), incoming.queries["path"], incoming.queries["name"], incoming.queries["data"]);
+        h::log("Requested set data for team " + incoming.queries["team"] + " for " + incoming.queries["path"] + "/" + incoming.queries["name"] + " with data: " + incoming.queries["data"]);
+        return "Command Invoked!!!";
+    }
+
     if(incoming.path.substr(0, 5) == "/file")
     {
         return process_f_req(incoming.path, outgoing);

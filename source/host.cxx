@@ -106,6 +106,7 @@ void checkcfg()
         {
             fout << "debug" << std::endl;
             fout << "ramfs" << std::endl;
+            fout << "handle_signals" << std::endl;
             fout.close();
             h::log("Successfully wrote configuration file to: " + dlib::cast_to_string(CFGB_LOCATION));
             vars::cfgin.open(CFGB_LOCATION, std::ifstream::in);

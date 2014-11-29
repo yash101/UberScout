@@ -58,6 +58,7 @@ function openMessageBox(caption, text)
 	document.getElementById("mesbox").style.MsTransform = "none";
 	document.getElementById("mesbox").style.MozTransform = "none";
 	document.getElementById("mesbox").style.OTransform = "none";
+	document.getElementById("mesbox").style.display = "block";
 }
 
 function closeMessageBox()

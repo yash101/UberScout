@@ -11,6 +11,7 @@ namespace d
     void writeTeamNumbers(std::vector<d::ushort> nums);
     void rmTeam(d::ushort team);
     void setTeamDescription(d::ushort team_number, std::string description);
-    void modTeamValue(d::ushort team_number, std::string name, std::string data);
+    void modTeamValue(d::ushort team_number, std::string path, std::string name, std::string data);
+    std::string getTeamValue(d::ushort team_number, std::string path, std::string name);
 }
 #endif // DATABASE_HXX

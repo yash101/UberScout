@@ -1,2 +1,34 @@
+<link rel="stylesheet" type="text/css" href="/file/css?loc=assets/web/css/apps/team_modification.css">
 <h1>Team Modification</h1>
 <p>Here, you will be able to modify team details!</p>
+<div id="main_frm_team_modification">
+	<form action="javascript:loadTeamModificationData();">
+		<input type="text" id="team_number" placeholder="Please enter a team number and then press Load Team!" />
+		<input type="submit" value="Load Team">
+	</form>
+	<hr />
+	<form action="javascript:setTeamModificationData();">
+		<h1 id="team_number_display"></h1>
+		
+		<div class="block">
+			<h2>Team Description</h2>
+			<h3>Team's Name</h3>
+			<input type="text" id="team_name_mod" placeholder="New Team Name" />
+			<h3>Team's School</h3>
+			<input type="text" id="team_school_mod" placeholder="Please enter the team's school!" />
+			<h3>Team's Description</h3>
+			<textarea id="team_description_mod" placeholder="Team Description. Please describe this team!"></textarea>
+		</div>
+
+		<hr />
+
+		<div class="block">
+			<h2>Robot Description</h2>
+			<textarea id="robot_description_mod" placeholder="Robot Description. Please describe the robot. Be concise."></textarea>
+			<h3>Drivetrain</h3>
+			<input type="text" placeholder="Robot Drivetrain Type" id="robot_drivetrain_mod">
+		</div>
+
+		<input type="submit" value="Request Modification">
+	</form>
+</div>

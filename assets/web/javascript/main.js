@@ -3,6 +3,7 @@ window.onload = function()
 {
 	changeBody("/file/html?loc=assets/web/html/home.mdhtml");
 	boot_navigator();
+	closeAppsPage();
 }
 
 function changeReason(x)
@@ -15,6 +16,6 @@ function changeReason(x)
 
 var ImageLoaderBoot = setInterval(function()
 {
-	document.getElementById("topnav_img").src = "/file/png?loc=assets/web/png/UberScout.png";
 	clearInterval(ImageLoaderBoot);
+	document.getElementById("topnav_img").src = "/file/png?loc=assets/web/png/UberScout.png";
 }, 1000);

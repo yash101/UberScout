@@ -10,7 +10,10 @@
 		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/team_listing.js"></script>
 		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/apps/team_registrar.js"></script>
 		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/apps_page.js"></script>
+		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/apps/team_modification.js"></script>
 		<script type="text/javascript" src="/file/js?loc=assets/web/javascript/main.js"></script>
+
+		<meta name="viewport" content="width=320, initial-scale=.33, maximum-scale=1, user-scalable=no">
 	</head>
 	<body>
 		<div id="content">
@@ -25,13 +28,15 @@
 			<div id="nav-home">Home</div>
 			<div id="apps-link">Apps</div>
 		</div>
-		<div id="applications_menu">
-			<div id="nav-home-apps">Homepage</div>
-			<div id="nav-help-apps">Help</div>
-			<div id="team-list-apps">Team List</div>
-			<div id="team-registrar">Team Registrar</div>
-			<div id="team-modify">Modify Team</div>
-			<div id="close-applications_menu" onclick="javascript:closeAppsPage();">Close Apps List!</div>
+		<div id="applications_menu_disp">
+			<div id="applications_menu">
+				<div id="nav-home-apps">Homepage</div>
+				<div id="nav-help-apps">Help</div>
+				<div id="team-list-apps">Team List</div>
+				<div id="team-registrar">Team Registrar</div>
+				<div id="team-modify">Modify Team</div>
+				<div id="close-applications_menu" onclick="javascript:closeAppsPage();">Close Apps List!</div>
+			</div>
 		</div>
 		<div id="mesbox">
 			<div id="mesbox_back" onclick="javascript:closeMessageBox();">X</div>

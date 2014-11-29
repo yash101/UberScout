@@ -15,6 +15,13 @@
 #include <unistd.h>
 #endif
 
+template<typename T> inline std::string toString(T x)
+{
+    std::stringstream str;
+    str << x;
+    return str.str();
+}
+
 bool dev::fs::write_file(std::string file_location, std::string data)
 {
     std::ofstream fout(file_location.c_str());
@@ -82,23 +89,82 @@ void dev::fs::makedirpath(std::string name)
 #else
 #define PCONCAT '/'
 #endif
-    std::stringstream str;
-    str << name;
+//    std::stringstream str;
+//    str << name;
 
-    std::vector<std::string> names;
-    std::string buf;
-    while(std::getline(str, buf, PCONCAT))
+//    std::vector<std::string> names;
+//    std::string buf;
+//    while(std::getline(str, buf, PCONCAT))
+//    {
+//        names.push_back(buf);
+//    }
+//    for(unsigned int i = 0; i < names.size(); i++)
+//    {
+//        std::stringstream x;
+//        for(unsigned int j = 0; j < i; j++)
+//        {
+//            x << names[j] << PCONCAT;
+//            std::cout << "Creating directory: " << names[i] << PCONCAT << std::endl;
+//        }
+//        dev::fs::makedir(x.str());
+//    }
+//    std::vector<std::string> names;
+//    std::string buf;
+//    std::stringstream str(name);
+//    while(str.peek() != EOF)
+//    {
+//        if((char) str.peek() == '/' || (char) str.peek() == '\\')
+//        {
+//            std::cout << "Pushed back: " << buf << std::endl;
+//            names.push_back(buf);
+//            buf = "";
+//        }
+//        else
+//        {
+//            buf = buf + toString((char) str.peek());
+//        }
+//        str.get();
+//    }
+//    names.push_back(buf);
+
+//    for(unsigned int i = 0; i < names.size(); i++)
+//    {
+//        std::cout << "Buffer: " << names[i] << std::endl;
+//        std::stringstream x;
+//        for(unsigned int j = 0; j < i; j++)
+//        {
+//            x << names[j] << PCONCAT;
+//            std::cout << "Creating directory: " << names[i] << PCONCAT << std::endl;
+//        }
+//        dev::fs::makedir(x.str());
+//    }
+    std::stringstream fn(name);
+    std::vector<std::string> fns;
+    std::string buffer;
+
+    while(fn.peek() != EOF)
     {
-        names.push_back(buf);
-    }
-    for(unsigned int i = 0; i < names.size(); i++)
-    {
-        std::stringstream x;
-        for(unsigned int j = 0; j < i; j++)
+        char ch = (char) fn.get();
+        buffer = buffer + ch;
+        if(ch == '/' || ch == '\\')
         {
-            x << names[j] << PCONCAT;
+            fns.push_back(buffer);
+            buffer.clear();
         }
-        dev::fs::makedir(x.str());
+    }
+    if(buffer.size() != 0)
+    {
+        fns.push_back(buffer);
+    }
+
+    for(unsigned int i = 0; i < fns.size(); i++)
+    {
+        std::stringstream z;
+        for(unsigned int j = 0; j <= i; j++)
+        {
+            z << fns[j];
+        }
+        dev::fs::makedir(z.str());
     }
 }
 
@@ -115,3 +181,28 @@ void dev::fs::deleteFile(std::string name)
 {
     remove(name.c_str());
 }
+
+bool dev::fs::checkFile(std::string name)
+{
+    std::ifstream fin(name.c_str());
+    bool x = !fin.fail();
+    if(fin.is_open())
+    {
+        fin.close();
+    }
+    return x;
+}
+
+//bool dev::fs::checkFolder(std::string folder)
+//{
+//    dev::fs::write_file(folder + "/.testdir", "Random test directory file!");
+//    if(dev::fs::checkFile(folder + "/.testdir"))
+//    {
+//        dev::fs::deleteFile(folder + "/.testdir");
+//        return true;
+//    }
+//    else
+//    {
+//        return false;
+//    }
+//}

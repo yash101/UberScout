@@ -1,4 +1,21 @@
 <h1>Getting Started!</h1>
+<hr />
+<h2>Using the Web Interface</h2>
+<p>The interface has been designed to be feature-dense and easy to use! Therefore, it is quite simple to use!</p>
+<div class="block">
+	<h3>The interface:</h3>
+	<p>The interface has many major components. This section will help you get used to them.</p>
+	<p><u>The Applications Page</u></p>
+	<p>The applications page can be accessed by clicking the "Apps" button at the top of the interface.</p>
+	<p>This page is the central hub that allows you to do anything. Once you have clicked it, the interface will open with some sort of genie effect. To close this window, either click on a button or scroll down to the "Close Apps List!" button.</p>
+	<p>You will see many different applications enabled by this interface. To enter an application, click on the appropriate button.</p>
+	<p><u>The content window</u></p>
+	<p>The content window is the gray area in the web interface, where this text is being displayed. All content will be loaded in this area.</p>
+	<p><u>Help button</u></p>
+	<p>Click this button to enter my help site.</p>
+</div>
+<hr />
+<h2>Installation</h2>
 <p>Getting started is quite simple! To begin, please clone the <a href="https://github.com/yash101/UberScout" target="_blank">GitHub repository!</a></p>
 <p>To clone the repository, either click the download as zip button on the web interface, or run the following command:</p>
 <pre>$~ git clone https://github.com/yash101/UberScout.git</pre>
