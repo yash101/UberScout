@@ -193,16 +193,16 @@ bool dev::fs::checkFile(std::string name)
     return x;
 }
 
-//bool dev::fs::checkFolder(std::string folder)
-//{
-//    dev::fs::write_file(folder + "/.testdir", "Random test directory file!");
-//    if(dev::fs::checkFile(folder + "/.testdir"))
-//    {
-//        dev::fs::deleteFile(folder + "/.testdir");
-//        return true;
-//    }
-//    else
-//    {
-//        return false;
-//    }
-//}
+bool dev::fs::checkFolder(std::string folder)
+{
+    dev::fs::write_file(folder + "/.testdir", "Random test directory file!");
+    if(dev::fs::checkFile(folder + "/.testdir"))
+    {
+        dev::fs::deleteFile(folder + "/.testdir");
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

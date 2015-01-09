@@ -13,6 +13,7 @@ namespace dev
         void deleteFile(std::string name);
         void makedirpath(std::string name);
         bool checkFile(std::string name);
+        bool checkFolder(std::string name);
     }
 }
 #endif // FILE_HXX

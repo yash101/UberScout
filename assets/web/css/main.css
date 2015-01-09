@@ -201,3 +201,62 @@ body
 	color: white;
 	padding: 16px;
 }
+
+#team_picker
+{
+	position: absolute;
+	top: -48px;
+	left: -48px;
+	right: 1000%;
+	bottom: 1000%;
+	opacity: 0.9;
+	background-color: #404040;
+	overflow-y: auto;
+	padding: 16px;
+
+	-webkit-transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	-ms-transition: all .25s ease-in-out;
+	-o-transition: all .25s ease-in-out;
+	transition: all .25s ease-in-out;
+}
+
+#team_picker_table
+{
+	color: #98BF21;
+	width: 100%;
+}
+
+#team_picker_table .TeamPickerRow
+{
+	background-color: #404040;
+}
+
+#team_picker_table .TeamPickerRow:hover
+{
+	background-color: #C6C6C6;
+	color: #404040;
+}
+
+#team_picker_table .TeamPickerNumber
+{
+	width: 128px;
+}
+
+#team_picker_table th
+{
+	background-color: #C6C6C6;
+	color: #404040;
+}
+
+#team_picker #team_picker_cancel
+{
+	border: 4px solid #98BF21;
+	position: relative;
+	width: 100%;
+}
+
+#team_picker #team_picker_cancel:hover
+{
+	border: 4px solid red;
+}

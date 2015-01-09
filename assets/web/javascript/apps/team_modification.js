@@ -50,9 +50,9 @@ function setTeamModificationData()
 	var tmp = "team=" + encodeURI(currentTeamInModification) + "&path=&name=drivetrain&data=" + encodeURI(document.getElementById("robot_drivetrain_mod").value);
 	AJAX_POST("/setvalue", tmp, function(x) {}, function(x) {});
 	openMessageBox("Team Modification Successful!", "The team data was modified sucessfully!");
-	var tstamp = new Date().getMilliseconds();
-	var tmp = "team=" + encodeURI(currentTeamInModification) + "&path=teammoddat&name=timestamp&data=" + encodeURI(tstamp);
-	AJAX_POST("/setvalue", tmp, function(x){}, function(x){});
+	// var tstamp = new Date().getMilliseconds();
+	// var tmp = "team=" + encodeURI(currentTeamInModification) + "&path=teammoddat&name=timestamp&data=" + encodeURI(tstamp);
+	// AJAX_POST("/setvalue", tmp, function(x){}, function(x){});
 
 	loadTeamModificationData();
 

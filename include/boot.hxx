@@ -6,5 +6,6 @@ namespace boot
     void install();
     void boot();
     void configure();
+    void downloadAssets();
 }
 #endif // BOOT_HXX

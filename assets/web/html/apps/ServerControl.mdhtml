@@ -1,0 +1,11 @@
+<div id="ServerControlMain">
+	<h1>Server Control and Access</h1>
+	<hr />
+	<div class="block">
+		<h2>Query Management</h2>
+		<h3>Send GET Request</h3>
+		<input type="text" id="ServerControlGetRequestLocation" />
+		<hr />
+		<div id="TargetForSCRequest"></div>
+	</div>
+</div>

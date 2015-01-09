@@ -31,7 +31,7 @@ template<typename T> inline std::string toString(T b)
     return str.str();
 }
 
-void downloadAssets()
+void boot::downloadAssets()
 {
     try
     {
@@ -69,6 +69,7 @@ void boot::checkInstallation()
         h::log("The installation directory does not exist! Installing!");
         install();
     }
+
     h::log("Server starting on port: " + dev::fs::read_file("installation/portno.cfg"));
 }
 
@@ -79,20 +80,16 @@ void boot::install()
     dev::fs::makedirpath("installation");
     h::log("Creating server port file!");
     dev::fs::write_file("installation/portno.cfg", DEFAULT_INSTALLATION_PORT);
-    downloadAssets();
-    dev::fs::makedirpath("assets/database");
     h::log("Installation complete!");
 }
 
 void boot::configure()
 {
+    std::string buffer;
+
     checkInstallation();
     std::cout << "This utility will guide you through the configuration of this server!" << std::endl;
     std::cout << "Port number...This is the port that the server will listen on!" << std::endl << "# ";
-
-    std::string buffer;
-    std::cout << "Command-line Unzip utility? Use \"%\" for the filename!" << std::endl;
-    std::getline(std::cin, unziputility);
 
     unsigned short int portno;
     std::getline(std::cin, buffer);
@@ -112,7 +109,7 @@ void boot::configure()
     exit(EXIT_SUCCESS);
 }
 
-void boot::boot()
+void __fork()
 {
 #ifndef __WIN32
     if(h::getCfg("fork"))
@@ -154,4 +151,9 @@ void boot::boot()
         }
     }
 #endif
+}
+
+void boot::boot()
+{
+    __fork();
 }
