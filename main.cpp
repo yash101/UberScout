@@ -32,7 +32,6 @@ int main(int argc, char** argv)
     h::boot();
     h::log("Checking installation...");
     boot::checkInstallation();
-    h::log("Performing postboot...");
     boot::boot();
 
     //Just a grace sleep period. 100% unnecessary ;)
