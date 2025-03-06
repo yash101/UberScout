@@ -16,7 +16,7 @@
 #include "../lib/dlib/iosockstream.h"
 #include "../lib/dlib/dir_nav.h"
 
-#define DEFAULT_INSTALLATION_PORT   "8000"
+#define DEFAULT_INSTALLATION_PORT   "3000"
 #define DEVYASH_CDN                 "/x/uberscout/respack.zip"
 #ifdef __WIN32
 std::string unziputility = "";
